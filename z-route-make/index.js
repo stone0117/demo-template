@@ -19,10 +19,18 @@ const parentName   = pascalCase(parentFolder)
 const parentTitle  = capitalCase(parentFolder)
 
 const children = [
-  getChildConfig('es6-test-001'),
-  getChildConfig('es6-test-002'),
-  getChildConfig('es6-test-003'),
+  // getChildConfig('es6-test-005'),
+  // getChildConfig('es6-test-006'),
+  // getChildConfig('es6-test-007'),
+  // getChildConfig('es6-test-008'),
 ]
+
+let start = 1
+for (let i = 0; i < 10; ++i) {
+  let folder = 'es6-test-' + String(start).padStart(3, '0')
+  children.push(getChildConfig(folder))
+  start++
+}
 ////////////////////////////////////////////////////////////////////////////
 
 !async function () {
@@ -57,7 +65,7 @@ const children = [
     return `
       {
         path     : '${item.folder}',
-        component: () => import(('@/views/${parentFolder}/${item.folder}')),
+        component: () => import('@/views/${parentFolder}/${item.folder}'),
         name     : '${item.name}',
         meta     : { title  : '${item.title}', noCache: true, },
       }`
@@ -87,10 +95,10 @@ function pReadTextFile(filepath) {
   })
 }
 
-function getChildConfig(folder) {
+function getChildConfig(folder, name, title) {
   return {
     folder: folder,
-    name  : pascalCase(folder),
-    title : capitalCase(folder),
+    name  : name ? name : pascalCase(folder),
+    title : title ? title : capitalCase(folder),
   }
 }
