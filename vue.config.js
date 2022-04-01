@@ -81,17 +81,17 @@ module.exports = {
   },
   ////////////////////////////////////////////////////////////////////////////
   // global import scss variable and function mixins
-  // css: {
-  //   loaderOptions: {
-  //     scss: {
-  //       // 注意: 在 sass-loader v8 中, 这个选项名是 'prependData'
-  //       // prepend data 前置数据
-  //       prependData: `
-  // 				@import "@/style/global.scss";
-  //       `,
-  //     },
-  //   },
-  // },
+  css: {
+    loaderOptions: {
+      scss: {
+        // 注意: 在 sass-loader v8 中, 这个选项名是 'prependData'
+        // prepend data 前置数据
+        prependData: `
+  				@import "@/style/global.scss";
+        `,
+      },
+    },
+  },
   ////////////////////////////////////////////////////////////////////////////
   chainWebpack(config) {
     ////////////////////////////////////////////////////////////////////////////

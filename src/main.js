@@ -6,7 +6,7 @@ import ElementUI  from 'element-ui'
 import './assets/reset.css'
 import './styles.scss'
 import './styles/index.scss'
-
+import './style/index.scss'
 
 Vue.use(ElementUI)
 
