@@ -32,6 +32,7 @@
     "velocityjs" : "^2.0.6",
     "vue-cli-plugin-element-ui" : "~1.1.4",
     "vue-template-compiler" : "^2.6.11",
-    "babel-plugin-dynamic-import-node": "2.3.3"
+    "babel-plugin-dynamic-import-node": "2.3.3",
+    "script-ext-html-webpack-plugin": "^2.1.5"
   }
 }
